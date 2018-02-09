@@ -25,6 +25,8 @@ public class SootService {
 		List<String> classpaths = new ArrayList<>();
 
 		String dir = System.getProperty("user.dir") + File.separator + "lib" + File.separator + "java-1.7";
+		
+		String jdk = "C:\\Program Files\\Java\\jdk1.7.0_80\\";
 
 		classpaths.add(dir + File.separator + "javaws.jar");
 		classpaths.add(dir + File.separator + "jce.jar");
@@ -81,7 +83,7 @@ public class SootService {
 		LOGGER.info("Defining the Parameter Settings");
 
 		Options.v().set_whole_program(true);
-		Options.v().set_allow_phantom_refs(true);
+		//Options.v().set_allow_phantom_refs(true);
 		Options.v().setPhaseOption("cg", "verbose:true");
 	}
 }

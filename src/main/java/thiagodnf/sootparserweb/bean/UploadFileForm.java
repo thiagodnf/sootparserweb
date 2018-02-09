@@ -13,6 +13,10 @@ public class UploadFileForm {
 	private MultipartFile file;
 	
 	private String mainClass;
+	
+	private Boolean verbose;
+	
+	private Boolean allowPhantomRefs;
 
 	public MultipartFile getFile() {
 		return file;
@@ -28,5 +32,21 @@ public class UploadFileForm {
 
 	public void setMainClass(String mainClass) {
 		this.mainClass = mainClass;
+	}
+
+	public Boolean getVerbose() {
+		return verbose;
+	}
+
+	public void setVerbose(Boolean verbose) {
+		this.verbose = verbose;
+	}
+
+	public Boolean getAllowPhantomRefs() {
+		return allowPhantomRefs;
+	}
+
+	public void setAllowPhantomRefs(Boolean allowPhantomRefs) {
+		this.allowPhantomRefs = allowPhantomRefs;
 	}
 }
