@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+		<meta name="description" content="Statistics of Publications for the Brazilian Workshop on Search-Based Software Engineering" />
+		<meta name="author" content="Thiago Ferreira" />
+		<meta name="keywords" content="Search-Based Software Engineering, wesb, sbse, statistics, Brazilian Workshop on Search-Based Software Engineering" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="SBSE Stats" />
+		<meta name="robots" content="index, follow" />
+	
+		<title>SootParser Web</title>
+	</head>
+	<body>
+
+		<h1>SootParser Web</h1>
+
+		<form method="POST" action="#" th:action="@{/file-upload}" th:object="${uploadFileForm}" enctype="multipart/form-data">
+			<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+				<div class="form-control" data-trigger="fileinput">
+					<i class="glyphicon glyphicon-file fileinput-exists"></i> 
+					<span class="fileinput-filename"></span>
+				</div>
+				<span class="input-group-addon btn btn-default btn-file">
+					<span class="fileinput-new">Select</span>
+					<span class="fileinput-exists">Change</span>
+					<input type="file" th:field="*{file}" th:required="true"/>
+					<span th:if="${#fields.hasErrors('file')}" th:errors="*{file}">File</span>
+				</span>
+				<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+			</div>
+			
+			<input type="text" th:field="*{mainClass}" th:required="true"/>
+			<span th:if="${#fields.hasErrors('mainClass')}" th:errors="*{mainClass}">Main Class</span>
+					
+			<input type="submit" value="Send"/>
+		</form>
+
+
+	</body>
+</html>
